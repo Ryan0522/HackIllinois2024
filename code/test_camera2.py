@@ -33,6 +33,9 @@ def makepath(contours):
     return path
 
 if __name__ == '__main__':
+    camera = camera_module.Camera({
+        "show_preview": False
+    })
     camera.capture()
     arr = np.array((camera.image_array))
     contours, processed = process(arr)
