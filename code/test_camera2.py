@@ -72,10 +72,14 @@ if __name__ == '__main__':
     plt.plot(x,y)
     ax = plt.gca()
     ax.set_aspect('equal', adjustable='box')
+    plt.savefig('coords.png')
     plt.show()
 
     plt.figure(dpi=200)
 
 
     plt.imshow(processed)
+    plt.savefig('processed.png')
     plt.show()
+
+    
