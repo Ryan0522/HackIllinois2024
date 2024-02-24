@@ -82,4 +82,8 @@ if __name__ == '__main__':
     plt.savefig('processed.png')
     plt.show()
 
+    plt.imshow(arr)
+    plt.savefig('arr.png')
+    plt.show()
+
     
