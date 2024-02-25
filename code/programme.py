@@ -232,4 +232,4 @@ if __name__ == '__main__':
         angles.append(calculate_angle(vector1, vector2))
         vectors.append(vector2)
     
-    drive(use_equal, angles, 300)
+    drive(use_equal, angles, 200)
