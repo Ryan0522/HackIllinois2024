@@ -31,7 +31,7 @@ if __name__ == '__main__':
 def right_turn():
     motor1.forward(1)
     motor2.backward(1)
-    time.sleep(0.4)
+    time.sleep(0.3)
 
 def stop():
     motor1.forward(0)
