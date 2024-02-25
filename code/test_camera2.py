@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 from src import camera as camera_module
-
+from src import led as led_module
+import time
 
 def process(img):
     """
@@ -102,12 +103,27 @@ def make_equally_spaced(contour, spacing=10):
 
     return np.array(new_path)
 
+
+
 if __name__ == '__main__':
+    led1 = led_module.LED({
+        "pin": 20
+    })
+
+    led2 = led_module.LED({
+        "pin": 21
+    })
+    
     camera = camera_module.Camera({
         "show_preview": False
     })
     camera.capture()
     arr = np.array((camera.image_array))
+    
+    led2.on()
+    time.sleep(cycle_time)
+    led2.off()
+    time.sleep(cycle_time)
 
     contours, filtered = process(arr)
     path = path_splicing(makepath(contours))
@@ -116,6 +132,11 @@ if __name__ == '__main__':
     use_equal = get_coords(equal_path)
     use_spliced = get_coords(path)
     use = get_coords(contours)
+
+    led1.on()
+    time.sleep(cycle_time)
+    led1.off()
+    time.sleep(cycle_time)
     
     plt.figure(dpi=90)
     plt.plot(use_equal[0], use_equal[1], 'b-')
