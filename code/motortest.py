@@ -99,7 +99,7 @@ zoom(0.3)
 
 motor1.forward(1)
 motor2.forward(0.4)
-time.sleep(1.9)
+time.sleep(1.85)
 
 zoom(1)
 left_big_full_turn()
