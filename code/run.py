@@ -197,7 +197,13 @@ def drive(use_equal, angles, scale):
 
 
 if __name__ == '__main__':
+    led1 = led_module.LED({
+        "pin": 20
+    })
 
+    led2 = led_module.LED({
+        "pin": 21
+    })
 
     camera = camera_module.Camera({
         "show_preview": False
