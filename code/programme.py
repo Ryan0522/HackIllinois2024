@@ -203,7 +203,7 @@ if __name__ == '__main__':
     
     plt.figure(dpi=200)
     plt.plot(use_equal[0], use_equal[1], '-')
-    plt.plot(use_equal[0][:a], use_equal[1][:a], 'ro', markersize=2)
+    plt.plot(use_equal[0], use_equal[1], 'ro', markersize=2)
     ax = plt.gca()
     ax.set_aspect('equal', adjustable='box')
     
