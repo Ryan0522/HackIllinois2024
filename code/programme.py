@@ -149,20 +149,25 @@ def drive(use_equal, angles, scale):
         led2.off()
 
     def zoom(t):
-        motor1.forward(1)
+        motor1.forward(0.925)
         motor2.forward(1)
         time.sleep(t)
 
     def lturn(t):
-        motor1.forward(1)
+        motor1.forward(0.925)
         motor2.backward(1)
         time.sleep(t)
 
     def rturn(t):
-        motor2.forward(1)
+        motor2.forward(0.925)
         motor1.backward(1)
         time.sleep(t)
 
+    def pause():
+        motor1.forward(0)
+        motor2.forward(0)
+        time.sleep(0.2)
+        
     stop()
     stop()
     stop()
@@ -175,16 +180,15 @@ def drive(use_equal, angles, scale):
     for i in range(0, len(angles) - 1):
         t = distances[i] / scale
         angle = angles[i + 1]
-        tangle = abs(angles[i]) * 0.355 / 90
+        tangle = abs(angles[i]) * 0.325 / 90
         zoom(t)
         if (abs(angle) > 10):
             if (angle > 0):
                 lturn(tangle)
             else:
                 rturn(tangle)
+            pause()
         
-        
-
     led2.off()
     motor1.stop()
     motor2.stop()
