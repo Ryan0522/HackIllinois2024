@@ -180,7 +180,7 @@ def drive(use_equal, angles, scale):
 
 
 if __name__ == '__main__':
-    img = cv2.imread("./data/Star.png")
+    img = cv2.imread(sys.argv[1])
     contours, filtered = process(img)
     path = path_splicing(makepath(contours))
     contours = makepath(contours)
