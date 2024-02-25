@@ -71,7 +71,7 @@ def stop():
     led2.off()
 
 def pause():
-    motor1.foward(0)
+    motor1.forward(0)
     motor2.forward(0)
     time.sleep(0.3)
 
