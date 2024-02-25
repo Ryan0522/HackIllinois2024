@@ -2,6 +2,8 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
+from src import camera as camera_module
+
 
 def process(img):
     """
