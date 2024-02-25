@@ -86,7 +86,11 @@ def calculate_angle(vector1, vector2):
 def make_equally_spaced(contour, spacing=1):
     new_path = [contour[0]]  # Start with the first point
 
-    distances = np.linalg.norm(np.roll(contour, 1, axis=0) - contour, axis=1)
+    x, y = np.array(contour).T
+
+    # print(contour, x, y)
+
+    distances = [np.sqrt((x[i+1] - x[i])**2 + (y[i+1] - y[i])**2) for i in range(len(x) - 1)]
 
     for i in range(1, len(contour) - 1):
         if (2 * spacing <= distances[i] <= 30 *  spacing):
@@ -106,7 +110,8 @@ def make_equally_spaced(contour, spacing=1):
 
 
 def drive(use_equal, angles, scale):
-    distances = np.linalg.norm(np.roll(use_equal, 1, axis=0) - use_equal, axis=0)
+    x, y = use_equal
+    distances = [np.sqrt((x[i+1] - x[i])**2 + (y[i+1] - y[i])**2) for i in range(len(x) - 1)]
 
     motor1 = motor_module.Motor({
     "pins": {
@@ -149,8 +154,8 @@ def drive(use_equal, angles, scale):
         time.sleep(t)
 
     def lturn(t):
-        motor2.forward(1)
-        motor1.backward(1)
+        motor1.forward(1)
+        motor2.backward(1)
         time.sleep(t)
 
     def rturn(t):
@@ -163,41 +168,42 @@ def drive(use_equal, angles, scale):
     stop()
     
     for i in range(0, len(angles)):
-        t = distances[i + 1] / scale
+        t = distances[i] / 200
         angle = angles[i]
         tangle = abs(angles[i]) * 0.355 / 90
-        print("Going forward for (s):", t)
         zoom(t)
-    
-        if (abs(angle) > 5):
+        if (abs(angle) > 10):
             if (angle > 0):
-                print("turn left for (degree):", angle, ", for (s):", tangle)
                 lturn(tangle)
             else:
-                print("turn right for (degree):", angle, ", for (s):", tangle)
                 rturn(tangle)
-
-    motor1.stop()
-    motor2.stop()
-    return
 
 
 if __name__ == '__main__':
-    img = cv2.imread(sys.argv[1])
+    img = cv2.imread("./data/Star.png")
     contours, filtered = process(img)
     path = path_splicing(makepath(contours))
     contours = makepath(contours)
-    equal_path = path_splicing(make_equally_spaced(path, spacing=3))
+    equal_path = make_equally_spaced(path, spacing=5)
     use_equal = get_coords(equal_path)
     use_spliced = get_coords(path)
     use = get_coords(contours)
     
-    plt.figure(dpi=90)
-    plt.plot(use_equal[0], use_equal[1], 'b-')
-    plt.plot(use_equal[0], use_equal[1], 'ro', markersize=2)
+    a=100
+    
+    plt.figure(dpi=200)
+    plt.plot(use_equal[0], use_equal[1], '-')
+    plt.plot(use_equal[0][:a], use_equal[1][:a], 'ro', markersize=2)
     ax = plt.gca()
     ax.set_aspect('equal', adjustable='box')
-    plt.savefig('equal_coords.png')
+    
+    plt.show()
+    
+    plt.figure(dpi=90)
+    plt.plot(use[0], use[1], 'b-')
+    plt.plot(use[0], use[1], 'ro', markersize=2)
+    ax = plt.gca()
+    ax.set_aspect('equal', adjustable='box')
     plt.show()
     
     plt.figure(dpi=90)
@@ -205,20 +211,22 @@ if __name__ == '__main__':
     plt.plot(use_spliced[0], use_spliced[1], 'ro', markersize=2)
     ax = plt.gca()
     ax.set_aspect('equal', adjustable='box')
-    plt.savefig('coords.png')
     plt.show()
     
     plt.figure(dpi=70)
+    
     plt.imshow(filtered)
-    plt.savefig('filtered.png')
     plt.show()
     
     x, y = use_equal
-
+    
     distances = [np.sqrt((x[i+1] - x[i])**2 + (y[i+1] - y[i])**2) for i in range(len(x) - 1)]
     
-    initial_angle = np.degrees(np.arctan(y[1] / x[1]))
-    initial_vector = np.array([x[1],y[1]])
+    initial_angle = np.degrees(np.arctan(y[0] / x[0]))
+    initial_vector = np.array([x[0],y[0]])
+    
+    distances.append(np.sqrt(x[0]**2 + y[0]**2))
+    distances = np.roll(distances, 1)
     
     vectors = [initial_vector]
     angles = [initial_angle]
@@ -228,4 +236,4 @@ if __name__ == '__main__':
         angles.append(calculate_angle(vector1, vector2))
         vectors.append(vector2)
     
-    drive(use_equal, angles, 5000)
+    drive(use_equal, angles, 200)
