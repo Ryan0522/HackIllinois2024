@@ -31,7 +31,7 @@ if __name__ == '__main__':
 def right_turn():
     motor1.forward(0.925)
     motor2.backward(1)
-    time.sleep(0.325) # was 0.355
+    time.sleep(0.305) # was 0.355
 
 def left_turn():
     motor2.forward(1)
@@ -105,18 +105,29 @@ zoom(1)
 left_big_full_turn()
 zoom(0.35)
 left_big_full_turn()
-zoom(0.9)
+zoom(1.1)
 
+pause()
 right_turn()
+pause()
 zoom(0.5)
+pause()
 right_turn()
+pause()
 zoom(0.4)
+pause()
 left_turn()
+pause()
 zoom(0.45)
+pause()
 left_turn()
+pause()
 zoom(0.4)
+pause()
 right_turn()
+pause()
 zoom(0.5)
+pause()
 right_turn()
 
 # stop()
