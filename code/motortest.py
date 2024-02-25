@@ -1,5 +1,6 @@
 import numpy as np
 from src import motor as motor_module
+from src import led as led_module
 import time
 
 if __name__ == '__main__':
