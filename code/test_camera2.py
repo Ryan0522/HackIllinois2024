@@ -82,7 +82,7 @@ def calculate_angle(vector1, vector2):
 
     return angle_deg
 
-def make_equally_spaced(contour, spacing=1):
+def make_equally_spaced(contour, spacing=10):
     new_path = [contour[0]]  # Start with the first point
 
     distances = np.linalg.norm(np.roll(contour, 1, axis=0) - contour, axis=1)
