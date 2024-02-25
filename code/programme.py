@@ -172,16 +172,17 @@ def drive(use_equal, angles, scale):
     led1.off()
     led2.on()
     
-    for i in range(0, len(angles)):
+    for i in range(0, len(angles) - 1):
         t = distances[i] / scale
-        angle = angles[i]
+        angle = angles[i + 1]
         tangle = abs(angles[i]) * 0.355 / 90
+        zoom(t)
         if (abs(angle) > 10):
             if (angle > 0):
                 lturn(tangle)
             else:
                 rturn(tangle)
-        zoom(t)
+        
         
 
     led2.off()
