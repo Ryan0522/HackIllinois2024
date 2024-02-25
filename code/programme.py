@@ -163,17 +163,19 @@ def drive(use_equal, angles, scale):
     stop()
     
     for i in range(0, len(angles)):
-        if (i % 20 == 0):
-            print(i, t, angle, tangle)
         t = distances[i + 1] / scale
         angle = angles[i]
         tangle = abs(angles[i]) * 0.355 / 90
-        zoom(t)
+        print("Going forward for (s):", t)
+        # zoom(t)
+    
         if (abs(angle) > 5):
             if (angle > 0):
-                lturn(tangle)
+                print("turn left for (degree):", angle, ", for (s):", tangle)
+                # lturn(tangle)
             else:
-                rturn(tangle)
+                print("turn right for (degree):", angle, ", for (s):", tangle)
+                # rturn(tangle)
     return
 
 
