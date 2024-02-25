@@ -121,9 +121,9 @@ if __name__ == '__main__':
     arr = np.array((camera.image_array))
     
     led2.on()
-    time.sleep(cycle_time)
+    time.sleep(1)
     led2.off()
-    time.sleep(cycle_time)
+    time.sleep(1)
 
     contours, filtered = process(arr)
     path = path_splicing(makepath(contours))
@@ -134,9 +134,9 @@ if __name__ == '__main__':
     use = get_coords(contours)
 
     led1.on()
-    time.sleep(cycle_time)
+    time.sleep(1)
     led1.off()
-    time.sleep(cycle_time)
+    time.sleep(1)
     
     plt.figure(dpi=90)
     plt.plot(use_equal[0], use_equal[1], 'b-')
