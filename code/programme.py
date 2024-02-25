@@ -167,15 +167,18 @@ def drive(use_equal, angles, scale):
         angle = angles[i]
         tangle = abs(angles[i]) * 0.355 / 90
         print("Going forward for (s):", t)
-        # zoom(t)
+        zoom(t)
     
         if (abs(angle) > 5):
             if (angle > 0):
                 print("turn left for (degree):", angle, ", for (s):", tangle)
-                # lturn(tangle)
+                lturn(tangle)
             else:
                 print("turn right for (degree):", angle, ", for (s):", tangle)
-                # rturn(tangle)
+                rturn(tangle)
+
+    motor1.stop()
+    motor2.stop()
     return
 
 
