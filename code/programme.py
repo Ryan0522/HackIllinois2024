@@ -166,17 +166,27 @@ def drive(use_equal, angles, scale):
     stop()
     stop()
     stop()
+
+    led1.on()
+    time.sleep(0.2)
+    led1.off()
+    led2.on()
     
     for i in range(0, len(angles)):
-        t = distances[i] / 200
+        t = distances[i] / scale
         angle = angles[i]
         tangle = abs(angles[i]) * 0.355 / 90
-        zoom(t)
         if (abs(angle) > 10):
             if (angle > 0):
                 lturn(tangle)
             else:
                 rturn(tangle)
+        zoom(t)
+        
+
+    led2.off()
+    motor1.stop()
+    motor2.stop()
 
 
 if __name__ == '__main__':
@@ -233,4 +243,4 @@ if __name__ == '__main__':
         angles.append(calculate_angle(vector1, vector2))
         vectors.append(vector2)
     
-    drive(use_equal, angles, 500)
+    drive(use_equal, angles, 300)
