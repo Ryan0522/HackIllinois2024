@@ -70,6 +70,11 @@ def stop():
     time.sleep(0.5)
     led2.off()
 
+def pause():
+    motor1.foward(0)
+    motor2.forward(0)
+    time.sleep(0.3)
+
 def zoom(t):
     motor1.forward(0.91)
     motor2.forward(1)
@@ -115,8 +120,10 @@ stop()
 for _ in range(3):
     zoom(1)
     right_full_turn()
+    pause()
     zoom(1)
     right_full_turn()
+    puase()
 
 motor1.stop()
 motor2.stop()
