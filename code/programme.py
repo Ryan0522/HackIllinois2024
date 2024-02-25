@@ -5,6 +5,7 @@ import sys
 from src import motor as motor_module
 from src import led as led_module
 import time
+import math
 
 def process(img):
     """
@@ -229,7 +230,7 @@ if __name__ == '__main__':
         vector1 = vectors[i - 1]
         vector2 = np.array([x[i+1] - x[i], y[i+1] - y[i]])
         angle = calculate_angle(vector1, vector2)
-        if (np.isnan(calculate_angle)):
+        if (calculate_angle == math.nan):
             angles.append(0)
         else:
             angles.append(calculate_angle(vector1, vector2))
