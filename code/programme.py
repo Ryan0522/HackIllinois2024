@@ -149,8 +149,8 @@ def drive(use_equal, angles, scale):
         time.sleep(t)
 
     def lturn(t):
-        motor1.forward(1)
-        motor2.backward(1)
+        motor2.forward(1)
+        motor1.backward(1)
         time.sleep(t)
 
     def rturn(t):
