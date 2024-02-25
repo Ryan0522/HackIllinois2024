@@ -32,31 +32,7 @@ def stop():
 
 motor1.forward(0.5)
 motor2.forward(0.5)
-time.sleep(1)
-
-stop()
-right_turn()
-stop()
-
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(2)
-
-stop()
-right_turn()
-stop()
-
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(2)
-
-stop()
-right_turn()
-stop()
-
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(2)
+time.sleep(0.5)
 
 stop()
 right_turn()
@@ -65,6 +41,30 @@ stop()
 motor1.forward(0.5)
 motor2.forward(0.5)
 time.sleep(1)
+
+stop()
+right_turn()
+stop()
+
+motor1.forward(0.5)
+motor2.forward(0.5)
+time.sleep(1)
+
+stop()
+right_turn()
+stop()
+
+motor1.forward(0.5)
+motor2.forward(0.5)
+time.sleep(1)
+
+stop()
+right_turn()
+stop()
+
+motor1.forward(0.5)
+motor2.forward(0.5)
+time.sleep(0.5)
 
 
 motor1.stop()
