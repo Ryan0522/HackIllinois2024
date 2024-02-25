@@ -46,7 +46,7 @@ def right_big_full_turn():
 def right_full_circle():
     motor1.forward(1)
     motor2.backward(1)
-    time.sleep(2.13)
+    time.sleep(1.42)
 
 def stop():
     motor1.forward(0)
@@ -78,7 +78,7 @@ zoom(1.3)
 
 stop()
 right_full_circle()
-
+right_full_turn()
 stop()
 
 # right_turn()
