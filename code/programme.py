@@ -199,7 +199,7 @@ if __name__ == '__main__':
     contours, filtered = process(img)
     path = path_splicing(makepath(contours))
     contours = makepath(contours)
-    equal_path = make_equally_spaced(path, spacing=5)
+    equal_path = make_equally_spaced(path, spacing=10)
     use_equal = get_coords(equal_path)
         
     plt.figure(dpi=200)
