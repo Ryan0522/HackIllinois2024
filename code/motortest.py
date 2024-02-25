@@ -25,3 +25,6 @@ speed = 5
 motor1.forward(speed)
 motor2.forward(speed)
 time.sleep(dt)
+
+motor1.stop()
+motor2.stop()
