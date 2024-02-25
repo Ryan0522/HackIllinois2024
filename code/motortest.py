@@ -62,20 +62,22 @@ def zoom(t):
 
 right_full_circle()
 
+stop()
 zoom(1.2)
 
 stop()
 right_turn()
 stop()
 
-zoom(0.3)
+zoom(0.4)
 
 stop()
 right_turn()
 stop()
 
-zoom(1.35)
+zoom(1.3)
 
+stop()
 right_full_circle()
 
 stop()
