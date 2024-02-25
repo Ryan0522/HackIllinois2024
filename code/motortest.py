@@ -38,7 +38,7 @@ def right_full_turn():
     motor2.backward(1)
     time.sleep(0.71)
 
-def right_full_circle();
+def right_full_circle():
     motor1.forward(1)
     motor2.backward(1)
     time.sleep(0.142)
