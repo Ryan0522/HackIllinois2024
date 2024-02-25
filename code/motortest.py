@@ -64,29 +64,29 @@ zoom(0.5)
 
 stop()
 right_turn()
-# stop()
+stop()
 
-# zoom(0.5)
+zoom(0.5)
 
-# stop()
-# right_turn()
-# stop()
+stop()
+right_turn()
+stop()
 
-# zoom(0.5)
+zoom(0.5)
 
-# stop()
-# right_turn()
-# stop()
+stop()
+right_turn()
+stop()
 
-# zoom(0.5)
+zoom(0.5)
 
-# stop()
-# right_turn()
-# stop()
+stop()
+right_turn()
+stop()
 
-# zoom(0.5)
+zoom(0.5)
 
-# zoom(1)
+zoom(1)
 
 motor1.stop()
 motor2.stop()
