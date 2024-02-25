@@ -55,48 +55,38 @@ def stop():
     time.sleep(0.25)
     led2.off()
 
-def zoom():
+def zoom(time):
     motor1.forward(1)
     motor2.forward(1)
-    time.sleep(1)
+    time.sleep(time)
 
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(0.5)
+zoom(0.5)
 
 stop()
 right_turn()
 stop()
 
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(1)
+zoom(0.5)
 
 stop()
 right_turn()
 stop()
 
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(1)
+zoom(0.5)
 
 stop()
 right_turn()
 stop()
 
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(1)
+zoom(0.5)
 
 stop()
 right_turn()
 stop()
 
-motor1.forward(0.5)
-motor2.forward(0.5)
-time.sleep(0.5)
+zoom(0.5)
 
-zoom()
+zoom(1)
 
 motor1.stop()
 motor2.stop()
