@@ -28,7 +28,7 @@ def right_turn():
 def stop():
     motor1.forward(0)
     motor2.backward(0)
-    time.sleep(0.2)
+    time.sleep(1)
 
 motor1.forward(0.5)
 motor2.forward(0.5)
