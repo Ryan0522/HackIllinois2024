@@ -38,6 +38,11 @@ def right_full_turn():
     motor2.backward(1)
     time.sleep(0.71)
 
+def right_full_circle();
+    motor1.forward(1)
+    motor2.backward(1)
+    time.sleep(0.142)
+
 def stop():
     motor1.forward(0)
     motor2.backward(0)
@@ -55,32 +60,24 @@ def zoom(t):
     motor2.forward(1)
     time.sleep(t)
 
-zoom(1.2)
-
-stop()
-right_turn()
-stop()
-right_turn()
-stop()
+right_full_circle()
 
 zoom(1.2)
 
 stop()
 right_turn()
 stop()
+
+zoom(0.3)
+
+stop()
 right_turn()
 stop()
 
-zoom(1.2)
+zoom(1.35)
 
-stop()
-right_full_turn()
-stop()
+right_full_circle()
 
-zoom(1.2)
-
-stop()
-right_full_turn()
 stop()
 
 # right_turn()
