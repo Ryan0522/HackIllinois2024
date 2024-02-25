@@ -114,6 +114,7 @@ stop()
 
 zoom(1)
 right_full_turn()
+zoom(1)
 
 # for _ in range(3):
 #     zoom(1)
