@@ -41,7 +41,7 @@ def left_turn():
 def right_full_turn():
     motor1.forward(1)
     motor2.backward(1)
-    time.sleep(0.687) #coefficient on wood
+    time.sleep(0.69) #coefficient on wood
 
 def right_big_full_turn():
     motor1.forward(1)
@@ -117,11 +117,11 @@ stop()
 stop()
 stop()
 
-for _ in range(3):
-    zoom(1)
+for _ in range(1):
+    zoom(2)
     right_full_turn()
     pause()
-    zoom(1)
+    zoom(2)
     right_full_turn()
     pause()
 
