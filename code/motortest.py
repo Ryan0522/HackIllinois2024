@@ -99,16 +99,15 @@ left_big_full_turn()
 zoom(0.75)
 
 right_turn()
-zoom(0.2)
-
+zoom(0.4)
 right_turn()
-zoom(0.2)
+zoom(0.4)
 left_turn()
-zoom(0.2)
+zoom(0.4)
 left_turn()
-zoom(0.2)
+zoom(0.4)
 right_turn()
-zoom(0.2)
+zoom(0.4)
 
 
 motor1.stop()
