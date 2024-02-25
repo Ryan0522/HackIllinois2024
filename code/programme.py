@@ -233,7 +233,7 @@ if __name__ == '__main__':
         if (calculate_angle == math.nan):
             angles.append(0)
         else:
-            angles.append(calculate_angle(vector1, vector2))
+            angles.append(angle)
         vectors.append(vector2)
     
     drive(use_equal, angles, 300)
