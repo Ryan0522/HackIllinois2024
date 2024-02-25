@@ -203,9 +203,7 @@ if __name__ == '__main__':
     use_equal = get_coords(equal_path)
     use_spliced = get_coords(path)
     use = get_coords(contours)
-    
-    a=100
-    
+        
     plt.figure(dpi=200)
     plt.plot(use_equal[0], use_equal[1], '-')
     plt.plot(use_equal[0], use_equal[1], 'ro', markersize=2)
