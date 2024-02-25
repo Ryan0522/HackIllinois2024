@@ -71,7 +71,7 @@ def stop():
     led2.off()
 
 def zoom(t):
-    motor1.forward(1)
+    motor1.forward(0.9)
     motor2.forward(1)
     time.sleep(t)
 
