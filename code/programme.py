@@ -225,9 +225,6 @@ if __name__ == '__main__':
     initial_angle = np.degrees(np.arctan(y[0] / x[0]))
     initial_vector = np.array([x[0],y[0]])
     
-    distances.append(np.sqrt(x[0]**2 + y[0]**2))
-    distances = np.roll(distances, 1)
-    
     vectors = [initial_vector]
     angles = [initial_angle]
     for i in range(1, len(x) - 1):
