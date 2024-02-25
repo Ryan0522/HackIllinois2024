@@ -201,30 +201,13 @@ if __name__ == '__main__':
     contours = makepath(contours)
     equal_path = make_equally_spaced(path, spacing=5)
     use_equal = get_coords(equal_path)
-    use_spliced = get_coords(path)
-    use = get_coords(contours)
         
     plt.figure(dpi=200)
     plt.plot(use_equal[0], use_equal[1], '-')
     plt.plot(use_equal[0], use_equal[1], 'ro', markersize=2)
     ax = plt.gca()
     ax.set_aspect('equal', adjustable='box')
-    
-    plt.show()
-    
-    plt.figure(dpi=90)
-    plt.plot(use[0], use[1], 'b-')
-    plt.plot(use[0], use[1], 'ro', markersize=2)
-    ax = plt.gca()
-    ax.set_aspect('equal', adjustable='box')
-    plt.show()
-    
-    plt.figure(dpi=90)
-    plt.plot(use_spliced[0], use_spliced[1], 'b-')
-    plt.plot(use_spliced[0], use_spliced[1], 'ro', markersize=2)
-    ax = plt.gca()
-    ax.set_aspect('equal', adjustable='box')
-    plt.savefig('equal_coords.png')
+    plt.savefig('contour.png')
     plt.show()
     
     plt.figure(dpi=70)
