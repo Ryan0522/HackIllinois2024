@@ -94,7 +94,7 @@ time.sleep(1.65)
 
 zoom(0.65)
 left_big_full_turn()
-zoom(0.2)
+zoom(0.35)
 left_big_full_turn()
 zoom(0.6)
 
