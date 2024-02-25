@@ -229,11 +229,7 @@ if __name__ == '__main__':
     for i in range(1, len(x) - 1):
         vector1 = vectors[i - 1]
         vector2 = np.array([x[i+1] - x[i], y[i+1] - y[i]])
-        angle = calculate_angle(vector1, vector2)
-        if (calculate_angle == math.nan):
-            angles.append(0)
-        else:
-            angles.append(angle)
+        angles.append(calculate_angle(vector1, vector2))
         vectors.append(vector2)
     
     drive(use_equal, angles, 300)
