@@ -212,9 +212,9 @@ if __name__ == '__main__':
     arr = np.array((camera.image_array))
     
     led2.on()
-    time.sleep(cycle_time)
+    time.sleep(1)
     led2.off()
-    time.sleep(cycle_time)
+    time.sleep(1)
 
     img = cv2.imread(sys.argv[1])
     contours, filtered = process(img)
@@ -224,9 +224,9 @@ if __name__ == '__main__':
     use_equal = get_coords(equal_path)
 
     led1.on()
-    time.sleep(cycle_time)
+    time.sleep(1)
     led1.off()
-    time.sleep(cycle_time)
+    time.sleep(1)
         
     plt.figure(dpi=200)
     plt.plot(use_equal[0], use_equal[1], '-')
