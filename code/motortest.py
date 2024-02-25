@@ -20,14 +20,14 @@ if __name__ == '__main__':
         }
     })
     
-motor1.forward(1)
-motor2.forward(1)
+motor1.forward(0.5)
+motor2.forward(0.5)
 time.sleep(0.25)
-motor1.forward(1)
-motor2.forward(0.25)
+motor1.forward(0.5)
+motor2.forward(0.1)
 time.sleep(0.25)
-motor1.forward(2)
-motor2.forward(2)
+motor1.forward(0.5)
+motor2.forward(0.5)
 time.sleep(0.25)
 
 motor1.stop()
