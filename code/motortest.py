@@ -75,7 +75,7 @@ def zoom(t):
     motor2.forward(1)
     time.sleep(t)
 
-zoom(0.7)
+zoom(0.9)
 stop()
 right_turn()
 zoom(0.15)
@@ -86,20 +86,29 @@ zoom(0.3)
 left_big_full_turn()
 zoom(0.15)
 right_turn()
-zoom(0.2)
+zoom(0.3)
 
 motor1.forward(1)
 motor2.forward(0.3)
-time.sleep(1.4)
+time.sleep(1.65)
 
 zoom(0.4)
 left_big_full_turn()
 zoom(0.2)
 left_big_full_turn()
-zoom(0.4)
+zoom(0.6)
 
 right_turn()
-zoom(0.4)
+zoom(0.2)
+
+right_turn()
+zoom(0.2)
+left_turn()
+zoom(0.2)
+right_turn()
+zoom(0.2)
+left(turn)
+zoom(0.2)
 
 
 
