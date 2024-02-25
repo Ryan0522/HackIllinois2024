@@ -22,7 +22,7 @@ if __name__ == '__main__':
     
 motor1.forward(0.5)
 motor2.backward(0.5)
-time.sleep(1.5)
+time.sleep(3)
 
 
 motor1.stop()
