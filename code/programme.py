@@ -224,7 +224,7 @@ if __name__ == '__main__':
     plt.plot(use_spliced[0], use_spliced[1], 'ro', markersize=2)
     ax = plt.gca()
     ax.set_aspect('equal', adjustable='box')
-    plt.savefig('coords.png')
+    plt.savefig('equal_coords.png')
     plt.show()
     
     plt.figure(dpi=70)
