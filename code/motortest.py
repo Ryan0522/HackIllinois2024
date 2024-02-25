@@ -76,7 +76,7 @@ def pause():
     time.sleep(0.3)
 
 def zoom(t):
-    motor1.forward(0.92)
+    motor1.forward(0.93)
     motor2.forward(1)
     time.sleep(t)
 
