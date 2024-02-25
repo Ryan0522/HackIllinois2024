@@ -112,9 +112,29 @@ stop()
 stop()
 stop()
 
-motor1.forward(1)
-motor2.backward(1)
-time.sleep(30 * 0.355 / 90)
+angle = 30
+
+if (abs(angle) > 15):
+    if (angle > 0):
+        motor1.forward(1)
+        motor2.backward(1)
+        time.sleep(angle * 0.355 / 90)
+    else:
+        motor1.forward(1)
+        motor2.backward(1)
+        time.sleep(angle * 0.355 / 90)
+
+angle = -30
+
+if (abs(angle) > 15):
+    if (angle > 0):
+        motor1.forward(1)
+        motor2.backward(1)
+        time.sleep(angle * 0.355 / 90)
+    else:
+        motor2.forward(1)
+        motor1.backward(1)
+        time.sleep(abs(angle) * 0.355 / 90)
 
 motor1.stop()
 motor2.stop()
