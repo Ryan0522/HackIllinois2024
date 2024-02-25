@@ -209,14 +209,13 @@ if __name__ == '__main__':
         "show_preview": False
     })
     camera.capture()
-    arr = np.array((camera.image_array))
+    img = np.array((camera.image_array))
     
     led2.on()
     time.sleep(1)
     led2.off()
     time.sleep(1)
 
-    img = cv2.imread(sys.argv[1])
     contours, filtered = process(img)
     path = path_splicing(makepath(contours))
     contours = makepath(contours)
