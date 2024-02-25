@@ -182,7 +182,7 @@ def drive(use_equal, angles, scale):
         angle = angles[i + 1]
         tangle = abs(angles[i]) * 0.325 / 90
         zoom(t)
-        if (abs(angle) > 10):
+        if (abs(angle) > 4):
             if (angle > 0):
                 lturn(tangle)
             else:
@@ -246,4 +246,4 @@ if __name__ == '__main__':
         angles.append(calculate_angle(vector1, vector2))
         vectors.append(vector2)
     
-    drive(use_equal, angles, 500)
+    drive(use_equal, angles, 400)
