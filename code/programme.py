@@ -107,7 +107,6 @@ def make_equally_spaced(contour, spacing=1):
 
 def drive(use_equal, angles, scale):
     distances = np.linalg.norm(np.roll(use_equal, 1, axis=0) - use_equal, axis=0)
-    print(len(distances), len(angles))
 
     motor1 = motor_module.Motor({
     "pins": {
@@ -164,6 +163,8 @@ def drive(use_equal, angles, scale):
     stop()
     
     for i in range(0, len(angles)):
+        if (i % 20 == 0):
+            print(i, t, angle, tangle)
         t = distances[i + 1] / scale
         angle = angles[i]
         tangle = abs(angles[i]) * 0.355 / 90
