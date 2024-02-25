@@ -179,7 +179,7 @@ def drive(use_equal, angles, scale):
     
     for i in range(0, len(angles) - 1):
         t = distances[i] / scale
-        angle = angles[i + 1]
+        angle = angles[1]
         tangle = abs(angles[i]) * 0.325 / 90
         zoom(t)
         if (abs(angle) > 4):
@@ -231,4 +231,4 @@ if __name__ == '__main__':
         angles.append(calculate_angle(vector1, vector2))
         vectors.append(vector2)
     
-    drive(use_equal, angles, 500)
+    drive(use_equal, angles, 300)
