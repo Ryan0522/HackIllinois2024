@@ -19,15 +19,44 @@ if __name__ == '__main__':
             "control2": 8
         }
     })
+    led1 = led_module.LED({
+        "pin": 20
+    })
+
+    led2 = led_module.LED({
+        "pin": 21
+    })
 
 def right_turn():
     motor1.forward(0.5)
     motor2.backward(0.5)
-    time.sleep(0.63)
+    time.sleep(0.65)
 
 def stop():
     motor1.forward(0)
     motor2.backward(0)
+    led1.on()
+    time.sleep(0.25)
+    motor1.forward(0)
+    motor2.backward(0)
+    led1.off()
+    led2.on()
+    time.sleep(0.25)
+    motor1.forward(0)
+    motor2.backward(0)
+    led1.on()
+    led2.off()
+    time.sleep(0.25)
+    motor1.forward(0)
+    motor2.backward(0)
+    led1.off()
+    led2.on()
+    time.sleep(0.25)
+    led2.off()
+
+def zoom():
+    motor1.forward(1)
+    motor2.forward(1)
     time.sleep(1)
 
 motor1.forward(0.5)
@@ -66,6 +95,7 @@ motor1.forward(0.5)
 motor2.forward(0.5)
 time.sleep(0.5)
 
+zoom()
 
 motor1.stop()
 motor2.stop()
