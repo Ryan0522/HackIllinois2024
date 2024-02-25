@@ -118,10 +118,10 @@ stop()
 stop()
 
 for _ in range(1):
-    zoom(2)
+    zoom(1.4)
     right_full_turn()
     pause()
-    zoom(2)
+    zoom(1.4)
     right_full_turn()
     pause()
 
