@@ -98,14 +98,14 @@ right_turn()
 zoom(0.3)
 
 motor1.forward(1)
-motor2.forward(0.35)
+motor2.forward(0.4)
 time.sleep(1.7)
 
-zoom(0.7)
+zoom(1)
 left_big_full_turn()
 zoom(0.35)
 left_big_full_turn()
-zoom(0.85)
+zoom(0.9)
 
 right_turn()
 zoom(0.6)
